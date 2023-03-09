@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: 'ursacorelab.menu::lang.controller.label'
+
+# Model Form Field configuration
+form: $/ursacorelab/menu/models/menu/fields.yaml
+
+# Model Class name
+modelClass: UrsacoreLab\Menu\Models\Menu
+
+# Default redirect location
+defaultRedirect: UrsacoreLab/Menu/MenuController
+
+# Create page
+create:
+    title: ursacorelab.menu::lang.controller.create
+    redirect: UrsacoreLab/Menu/MenuController/update/:id
+    redirectClose: UrsacoreLab/Menu/MenuController
+
+# Update page
+update:
+    title: ursacorelab.menu::lang.controller.update
+    redirect: UrsacoreLab/Menu/MenuController
+    redirectClose: UrsacoreLab/Menu/MenuController
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

@@ -1,0 +1,45 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: 'ursacorelab.menu::lang.models.title'
+        span: storm
+        cssClass: col-sm-12 col-md-6
+
+    slug:
+        label: 'ursacorelab.menu::lang.models.slug'
+        preset:
+            field: title
+        span: storm
+        cssClass: col-sm-12 col-md-6
+
+    description:
+        label: 'ursacorelab.menu::lang.models.description'
+        span: storm
+        cssClass: col-sm-12 col-md-12
+
+secondaryTabs:
+    cssClass: 'ursacorelab_secondary_tabs'
+
+    fields:
+        is_external:
+            label: 'ursacorelab.menu::lang.models.is_external'
+            type: dropdown
+            default: 0
+            span: storm
+            cssClass: col-sm-12 col-md-12
+
+        link_target:
+            label: 'ursacorelab.menu::lang.models.link_target'
+            type: dropdown
+            span: storm
+            cssClass: col-sm-12 col-md-12
+
+        status:
+            label: 'ursacorelab.menu::lang.models.status'
+            type: dropdown
+            default: 110
+            span: storm
+            cssClass: col-sm-12 col-md-12

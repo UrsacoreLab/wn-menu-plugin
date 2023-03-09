@@ -1,0 +1,6 @@
+title: 'ursacorelab.menu::lang.controller.reorder.title'
+nameFrom: title
+modelClass: UrsacoreLab\Menu\Models\Menu
+
+toolbar:
+    buttons: reorder_toolbar

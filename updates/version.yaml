@@ -1,0 +1,4 @@
+'1.0.0':
+    - 'First version of UrsacoreLab.Menu'
+    - 1.0.0/create_menus_table.php
+    - 1.0.0/seed_menu_table.php
