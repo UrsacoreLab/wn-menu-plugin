@@ -39,7 +39,7 @@ class Plugin extends PluginBase
                 'url'         => Backend::url('UrsacoreLab/Menu/MenuController'),
                 'icon'        => 'icon-leaf',
                 'iconSvg'     => 'plugins/ursacorelab/menu/assets/icon_ursacorelab_menu.svg',
-                'permissions' => ['ursacorelab.menu.*'],
+                'permissions' => ['ursacorelab.menu.access'],
                 'order'       => 500,
             ],
         ];
