@@ -1,0 +1,29 @@
+{
+    "name" : "ursacorelab/wn-menu-plugin",
+    "type" : "winter-plugin",
+    "description" : "Menu Plugin for WinterCMS",
+    "homepage" : "https://github.com/UrsacoreLab/wn-menu-plugin",
+    "keywords" : [
+        "winter cms",
+        "winter",
+        "plugin",
+        "menu"
+    ],
+    "license" : "MIT",
+    "authors" : [
+        {
+            "name" : "Artem Mr.VACO Feoktistov",
+            "role" : "Original Author"
+        }
+    ],
+    "support" : {
+        "source" : "https://github.com/UrsacoreLab/wn-menu-plugin"
+    },
+    "require" : {
+        "php" : ">=8.0",
+        "composer/installers" : "~1.0"
+    },
+    "extra" : {
+        "installer-name" : "menu"
+    }
+}
