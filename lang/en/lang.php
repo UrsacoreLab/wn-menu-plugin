@@ -41,11 +41,5 @@ return [
         'updating' => 'Updating',
 
         'deleting' => 'Deleting',
-
-        'reorder' => [
-            'title'        => 'Sorting',
-            'label_plural' => 'Sort items',
-            'return'       => 'Back',
-        ],
     ],
 ];
