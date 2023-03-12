@@ -1,4 +1,5 @@
-title: 'ursacorelab.menu::lang.controller.reorder.title'
+title: 'backend::lang.reorder.default_title'
+
 nameFrom: title
 modelClass: UrsacoreLab\Menu\Models\Menu
 

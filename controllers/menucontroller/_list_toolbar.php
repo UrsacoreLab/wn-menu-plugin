@@ -22,6 +22,6 @@
     <a
         href="<?= Backend::url('UrsacoreLab/Menu/MenuController/reorder') ?>"
         class="btn btn-primary wn-icon-sort">
-        <?= trans('ursacorelab.menu::lang.controller.reorder.title'); ?>
+        <?= e(trans('backend::lang.reorder.default_title')); ?>
     </a>
 </div>
