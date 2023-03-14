@@ -5,6 +5,7 @@ namespace UrsacoreLab\Menu;
 use Backend\Facades\Backend;
 use Backend\Models\UserRole;
 use System\Classes\PluginBase;
+use UrsacoreLab\Menu\Models\MenuSettings;
 
 class Plugin extends PluginBase
 {
@@ -41,6 +42,22 @@ class Plugin extends PluginBase
                 'iconSvg'     => 'plugins/ursacorelab/menu/assets/icon_ursacorelab_menu.svg',
                 'permissions' => ['ursacorelab.menu.access'],
                 'order'       => 500,
+            ],
+        ];
+    }
+
+    public function registerSettings(): array
+    {
+        return [
+            'value' => [
+                'label'       => 'ursacorelab.menu::lang.plugin.name',
+                'description' => 'ursacorelab.menu::lang.plugin.description',
+                'category'    => 'UrsacoreLab',
+                'icon'        => 'icon-cogs',
+                'class'       => MenuSettings::class,
+                'order'       => 500,
+                'keywords'    => '',
+                'permissions' => ['ursacorelab.menu.access'],
             ],
         ];
     }

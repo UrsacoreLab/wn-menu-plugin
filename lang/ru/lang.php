@@ -42,4 +42,9 @@ return [
 
         'deleting' => 'Удаление',
     ],
+
+    'settings' => [
+        'additional_parameter_show_for_list'   => 'Возвращаемый дополнительный параметр "show" для списка меню',
+        'additional_parameter_show_for_single' => 'Возвращаемый дополнительный параметр "show" для указанного меню',
+    ],
 ];

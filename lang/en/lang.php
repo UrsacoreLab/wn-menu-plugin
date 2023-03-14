@@ -42,4 +42,9 @@ return [
 
         'deleting' => 'Deleting',
     ],
+
+    'settings' => [
+        'additional_parameter_show_for_list'   => 'Returned additional parameter "show" for menu list',
+        'additional_parameter_show_for_single' => 'Returned additional parameter "show" for single menu',
+    ],
 ];

@@ -6,12 +6,17 @@ use Backend\Classes\Controller;
 use Backend\Facades\BackendMenu;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use UrsacoreLab\Menu\Models\Menu;
+use UrsacoreLab\Menu\Models\MenuSettings;
 use UrsacoreLab\Menu\Resources\MenuResource;
 use UrsacoreLab\StaticVars\Classes\Additional;
 use UrsacoreLab\StaticVars\Classes\Statuses;
 
 class MenuController extends Controller
 {
+    protected bool $additional_parameter_show_for_list = false;
+
+    protected bool $additional_parameter_show_for_single = false;
+
     public $implement = [
         \Backend\Behaviors\FormController::class,
         \Backend\Behaviors\ListController::class,
@@ -22,6 +27,9 @@ class MenuController extends Controller
 
     public function __construct()
     {
+        $this->additional_parameter_show_for_list   = (boolean) MenuSettings::instance()->additional_parameter_show_for_list;
+        $this->additional_parameter_show_for_single = (boolean) MenuSettings::instance()->additional_parameter_show_for_single;
+
         parent::__construct();
 
         BackendMenu::setContext('UrsacoreLab.Menu', 'menu', 'menucontroller');
@@ -32,8 +40,6 @@ class MenuController extends Controller
 
     public function list(): AnonymousResourceCollection
     {
-        $debug = config('app.debug'); // If APP_DEBUG = true - show additional information on Frontend
-
         $data = Menu::query()
             ->where('status', Statuses::ACTIVE)
             ->where('parent_id', null)
@@ -44,16 +50,14 @@ class MenuController extends Controller
             ->additional(
                 $data->isEmpty()
                     ?
-                    Additional::warning($debug)
+                    Additional::warning($this->additional_parameter_show_for_list)
                     :
-                    Additional::success($debug, null, 'statuses.synced')
+                    Additional::success($this->additional_parameter_show_for_list, null, 'statuses.synced')
             );
     }
 
     public function getMenu($id): MenuResource|array
     {
-        $debug = config('app.debug'); // If APP_DEBUG = true - show additional information on Frontend
-
         $data = Menu::query()
             ->where('id', $id)
             ->where('status', Statuses::ACTIVE)
@@ -61,10 +65,10 @@ class MenuController extends Controller
             ->first();
 
         if (empty($data)) {
-            return Additional::error($debug);
+            return Additional::error($this->additional_parameter_show_for_single);
         }
 
         return MenuResource::make($data)
-            ->additional(Additional::success($debug, null, 'statuses.synced'));
+            ->additional(Additional::success($this->additional_parameter_show_for_single, null, 'statuses.synced'));
     }
 }
